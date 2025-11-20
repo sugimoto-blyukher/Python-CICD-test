@@ -2,3 +2,4 @@ fastapi[all]
 uvicorn[all]
 pytest
 flake8
+requests
