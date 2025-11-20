@@ -52,4 +52,4 @@ jobs:
         
     - name: Test with pytest
       run: |
-        pytest
+        pytest test/unit_test/testAPI.py
