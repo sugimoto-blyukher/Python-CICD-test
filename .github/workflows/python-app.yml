@@ -37,11 +37,11 @@ jobs:
 
     - name: run a FastAPI
       run: |
-        uvicorn main:app --reload --host 0.0.0.0 --port 8000 &
+        uvicorn app.src.main:app --reload &
         echo $! > uvicorn.pid
 
         for i in $(seq 1 30); do
-            if curl -fsS http://0.0.0.0:8000/docs > /dev/null; then
+            if curl -fsS http://127.0.0.1:8000 > /dev/null; then
               echo "Server is up"
               break
             fi
