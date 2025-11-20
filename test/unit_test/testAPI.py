@@ -20,7 +20,7 @@ def test01():
     
     
     response = requests.post(
-        endpoint, headers=header, data=json.dump(data)
+        endpoint, headers=header, data=json.dump(fp=data)
     )
     
     assert response.status_code == 200
