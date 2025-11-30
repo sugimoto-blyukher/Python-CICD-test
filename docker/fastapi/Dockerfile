@@ -1,16 +1,19 @@
-FROM python:3.11-slim-bookworm
+FROM python:3.14-slim-bookworm
+
+ENV LANG C.UTF-8
+ENV TZ Asia/Tokyo
 
 # 作業ディレクトリを設定
-WORKDIR /app
+#WORKDIR /app
 
-# 依存関係をコピー＆インストール
+# requirements.txtをコピー＆インストール
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# アプリ本体をコピー
+#appをコピー
 COPY ./app /app
 
-# コンテナ内で開けるポート（任意だけど書いておくと親切）
+#ポート開放
 EXPOSE 8080
 
 # 本番用CMD
