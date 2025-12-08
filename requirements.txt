@@ -3,3 +3,4 @@ uvicorn[all]
 pytest
 flake8
 requests
+sqlalchemy
